@@ -1,57 +1,70 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.notificationGrpcServerOptionsNestJs = exports.catalogGrpcServerOptionsNestJs = exports.orderGrpcClientOptionsNestJs = exports.notificationGrpcClientOptionsNestJs = exports.catalogGrpcClientOptionsNestJs = exports.ssoGrpcClientOptionsNestJs = void 0;
-const microservices_1 = require("@nestjs/microservices");
-const { join } = require('join');
-const constants_1 = require("../constants");
-const path_constant_1 = require("../constants/path.constant");
-exports.ssoGrpcClientOptionsNestJs = {
-    name: constants_1.SSO_GRPC_NAME,
-    transport: microservices_1.Transport.GRPC,
-    options: {
-        package: constants_1.SSO_GRPC_PACKAGE_NAME,
-        protoPath: join(__dirname, path_constant_1.ssoProtoPath || ''),
-    },
-};
-exports.catalogGrpcClientOptionsNestJs = {
-    name: constants_1.CATALOG_GRPC_NAME,
-    transport: microservices_1.Transport.GRPC,
-    options: {
-        package: constants_1.CATALOG_GRPC_PACKAGE_NAME,
-        protoPath: join(__dirname, path_constant_1.catalogProtoPath || ''),
-    },
-};
-exports.notificationGrpcClientOptionsNestJs = {
-    name: constants_1.NOTIFICATION_GRPC_NAME,
-    transport: microservices_1.Transport.GRPC,
-    options: {
-        package: constants_1.NOTIFICATION_GRPC_PACKAGE_NAME,
-        protoPath: join(__dirname, path_constant_1.notificationProtoPath || ''),
-    },
-};
-exports.orderGrpcClientOptionsNestJs = {
-    name: constants_1.ORDER_GRPC_NAME,
-    transport: microservices_1.Transport.GRPC,
-    options: {
-        package: constants_1.ORDER_GRPC_PACKAGE_NAME,
-        protoPath: join(__dirname, path_constant_1.orderProtoPath || ''),
-    },
-};
-const catalogGrpcServerOptionsNestJs = (url = '') => ({
-    transport: microservices_1.Transport.GRPC,
-    options: {
-        package: constants_1.CATALOG_GRPC_PACKAGE_NAME,
-        protoPath: join(__dirname, path_constant_1.catalogProtoPath || ''),
-        url,
-    },
-});
-exports.catalogGrpcServerOptionsNestJs = catalogGrpcServerOptionsNestJs;
-const notificationGrpcServerOptionsNestJs = (url = '') => ({
-    transport: microservices_1.Transport.GRPC,
-    options: {
-        package: constants_1.NOTIFICATION_GRPC_PACKAGE_NAME,
-        protoPath: join(__dirname, path_constant_1.notificationProtoPath || ''),
-        url,
-    },
-});
-exports.notificationGrpcServerOptionsNestJs = notificationGrpcServerOptionsNestJs;
+exports.test = void 0;
+exports.test = 'test';
+// import { ClientProviderOptions, GrpcOptions, Transport } from '@nestjs/microservices'
+// const { join } = require('join')
+// import {
+//   CATALOG_GRPC_NAME,
+//   CATALOG_GRPC_PACKAGE_NAME,
+//   NOTIFICATION_GRPC_NAME,
+//   NOTIFICATION_GRPC_PACKAGE_NAME,
+//   ORDER_GRPC_NAME,
+//   ORDER_GRPC_PACKAGE_NAME,
+//   SSO_GRPC_NAME,
+//   SSO_GRPC_PACKAGE_NAME,
+// } from '../constants'
+// import {
+//   catalogProtoPath,
+//   notificationProtoPath,
+//   orderProtoPath,
+//   ssoProtoPath,
+// } from '../constants/path.constant'
+// export const ssoGrpcClientOptionsNestJs: ClientProviderOptions = {
+//   name: SSO_GRPC_NAME,
+//   transport: Transport.GRPC,
+//   options: {
+//     package: SSO_GRPC_PACKAGE_NAME,
+//     protoPath: join(__dirname, ssoProtoPath || ''),
+//   },
+// }
+// export const catalogGrpcClientOptionsNestJs: ClientProviderOptions = {
+//   name: CATALOG_GRPC_NAME,
+//   transport: Transport.GRPC,
+//   options: {
+//     package: CATALOG_GRPC_PACKAGE_NAME,
+//     protoPath: join(__dirname, catalogProtoPath || ''),
+//   },
+// }
+// export const notificationGrpcClientOptionsNestJs: ClientProviderOptions = {
+//   name: NOTIFICATION_GRPC_NAME,
+//   transport: Transport.GRPC,
+//   options: {
+//     package: NOTIFICATION_GRPC_PACKAGE_NAME,
+//     protoPath: join(__dirname, notificationProtoPath || ''),
+//   },
+// }
+// export const orderGrpcClientOptionsNestJs: ClientProviderOptions = {
+//   name: ORDER_GRPC_NAME,
+//   transport: Transport.GRPC,
+//   options: {
+//     package: ORDER_GRPC_PACKAGE_NAME,
+//     protoPath: join(__dirname, orderProtoPath || ''),
+//   },
+// }
+// export const catalogGrpcServerOptionsNestJs = (url: string = ''): GrpcOptions => ({
+//   transport: Transport.GRPC,
+//   options: {
+//     package: CATALOG_GRPC_PACKAGE_NAME,
+//     protoPath: join(__dirname, catalogProtoPath || ''),
+//     url,
+//   },
+// })
+// export const notificationGrpcServerOptionsNestJs = (url: string = ''): GrpcOptions => ({
+//   transport: Transport.GRPC,
+//   options: {
+//     package: NOTIFICATION_GRPC_PACKAGE_NAME,
+//     protoPath: join(__dirname, notificationProtoPath || ''),
+//     url,
+//   },
+// })
