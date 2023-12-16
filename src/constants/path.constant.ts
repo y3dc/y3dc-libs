@@ -1,4 +1,4 @@
-export declare const ssoProtoPath = './dist/sso.proto'
-export declare const catalogProtoPath = './dist/catalog.proto'
-export declare const notificationProtoPath = './dist/notification.proto'
-export declare const orderProtoPath = './dist/order.proto'
+export const ssoProtoPath = './dist/sso.proto'
+export const catalogProtoPath = './dist/catalog.proto'
+export const notificationProtoPath = './dist/notification.proto'
+export const orderProtoPath = './dist/order.proto'
