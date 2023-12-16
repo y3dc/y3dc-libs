@@ -22,7 +22,7 @@ export const ssoGrpcClientOptionsNestJs: ClientProviderOptions = {
   transport: Transport.GRPC,
   options: {
     package: SSO_GRPC_PACKAGE_NAME,
-    protoPath: join(__dirname, ssoProtoPath),
+    protoPath: join(__dirname, ssoProtoPath || ''),
   },
 }
 
@@ -31,7 +31,7 @@ export const catalogGrpcClientOptionsNestJs: ClientProviderOptions = {
   transport: Transport.GRPC,
   options: {
     package: CATALOG_GRPC_PACKAGE_NAME,
-    protoPath: join(__dirname, catalogProtoPath),
+    protoPath: join(__dirname, catalogProtoPath || ''),
   },
 }
 
@@ -40,7 +40,7 @@ export const notificationGrpcClientOptionsNestJs: ClientProviderOptions = {
   transport: Transport.GRPC,
   options: {
     package: NOTIFICATION_GRPC_PACKAGE_NAME,
-    protoPath: join(__dirname, notificationProtoPath),
+    protoPath: join(__dirname, notificationProtoPath || ''),
   },
 }
 
@@ -49,7 +49,7 @@ export const orderGrpcClientOptionsNestJs: ClientProviderOptions = {
   transport: Transport.GRPC,
   options: {
     package: ORDER_GRPC_PACKAGE_NAME,
-    protoPath: join(__dirname, orderProtoPath),
+    protoPath: join(__dirname, orderProtoPath || ''),
   },
 }
 
@@ -57,7 +57,7 @@ export const catalogGrpcServerOptionsNestJs = (url: string): GrpcOptions => ({
   transport: Transport.GRPC,
   options: {
     package: CATALOG_GRPC_PACKAGE_NAME,
-    protoPath: join(__dirname, catalogProtoPath),
+    protoPath: join(__dirname, catalogProtoPath || ''),
     url,
   },
 })
@@ -66,7 +66,7 @@ export const notificationGrpcServerOptionsNestJs = (url: string): GrpcOptions =>
   transport: Transport.GRPC,
   options: {
     package: NOTIFICATION_GRPC_PACKAGE_NAME,
-    protoPath: join(__dirname, notificationProtoPath),
+    protoPath: join(__dirname, notificationProtoPath || ''),
     url,
   },
 })

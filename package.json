@@ -10,7 +10,7 @@
     "build": "tsup src/index.ts --format cjs,esm --dts && cp ./src/proto/*.proto ./dist/",
     "build:swc": "rm -rf dist && swc",
     "build:swc2": "swc src --out-dir dist",
-    "lint": "tsc"
+    "lint": "rm -rf dist && npx tsc && cp ./src/proto/*.proto ./dist/proto/"
   },
   "license": "ISC",
   "devDependencies": {
