@@ -1,7 +1,19 @@
 {
-	"name": "y3dc-libs",
-	"version": "1.0.0",
-	"description": "",
-	"author": "duyetvn",
-	"license": "ISC"
+  "name": "y3dc-libs",
+  "version": "1.0.0",
+  "description": "",
+  "author": "duyetvn",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "lint": "tsc"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.10.4",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3"
+  }
 }
