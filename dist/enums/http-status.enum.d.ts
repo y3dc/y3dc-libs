@@ -1,6 +1,4 @@
-import { Observable } from 'rxjs';
-
-declare enum HttpStatus {
+export declare enum HttpStatus {
     CONTINUE = 100,
     SWITCHING_PROTOCOLS = 101,
     PROCESSING = 102,
@@ -49,27 +47,3 @@ declare enum HttpStatus {
     GATEWAY_TIMEOUT = 504,
     HTTP_VERSION_NOT_SUPPORTED = 505
 }
-
-declare const CATALOG_SERVICE = "CATALOG_SERVICE";
-
-declare const protobufPackage = "auth";
-interface Authentication {
-    Authentication: string;
-}
-interface UserMessage {
-    id: string;
-    email: string;
-    password: string;
-    roles: string[];
-}
-declare const AUTH_PACKAGE_NAME = "auth";
-interface AuthServiceClient {
-    authenticate(request: Authentication): Observable<UserMessage>;
-}
-interface AuthServiceController {
-    authenticate(request: Authentication): Promise<UserMessage> | Observable<UserMessage> | UserMessage;
-}
-declare function AuthServiceControllerMethods(): (constructor: Function) => void;
-declare const AUTH_SERVICE_NAME = "AuthService";
-
-export { AUTH_PACKAGE_NAME, AUTH_SERVICE_NAME, type AuthServiceClient, type AuthServiceController, AuthServiceControllerMethods, type Authentication, CATALOG_SERVICE, HttpStatus, type UserMessage, protobufPackage };

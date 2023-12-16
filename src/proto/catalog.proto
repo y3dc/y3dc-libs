@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package catalog;
+
+service CatalogService {
+  rpc Catalogenticate(Catalog) returns (UserMessage) {}
+}
+
+message Catalog { string Catalog = 1; }
+
+message UserMessage {
+  string id = 1;
+  string email = 2;
+  string password = 3;
+  repeated string roles = 4;
+}
