@@ -10,19 +10,13 @@ import {
   SSO_GRPC_NAME,
   SSO_GRPC_PACKAGE_NAME,
 } from '../constants'
-import {
-  catalogProtoPath,
-  notificationProtoPath,
-  orderProtoPath,
-  ssoProtoPath,
-} from '../constants/path.constant'
 
 export const ssoGrpcClientOptionsNestJs: ClientProviderOptions = {
   name: SSO_GRPC_NAME,
   transport: Transport.GRPC,
   options: {
     package: SSO_GRPC_PACKAGE_NAME,
-    protoPath: join(__dirname, ssoProtoPath),
+    protoPath: join(__dirname, '../proto/sso.proto'),
   },
 }
 
@@ -31,7 +25,7 @@ export const catalogGrpcClientOptionsNestJs: ClientProviderOptions = {
   transport: Transport.GRPC,
   options: {
     package: CATALOG_GRPC_PACKAGE_NAME,
-    protoPath: join(__dirname, catalogProtoPath),
+    protoPath: join(__dirname, '../proto/catalog.proto'),
   },
 }
 
@@ -40,7 +34,7 @@ export const notificationGrpcClientOptionsNestJs: ClientProviderOptions = {
   transport: Transport.GRPC,
   options: {
     package: NOTIFICATION_GRPC_PACKAGE_NAME,
-    protoPath: join(__dirname, notificationProtoPath),
+    protoPath: join(__dirname, '../proto/notification.proto'),
   },
 }
 
@@ -49,7 +43,7 @@ export const orderGrpcClientOptionsNestJs: ClientProviderOptions = {
   transport: Transport.GRPC,
   options: {
     package: ORDER_GRPC_PACKAGE_NAME,
-    protoPath: join(__dirname, orderProtoPath),
+    protoPath: join(__dirname, '../proto/order.proto'),
   },
 }
 
@@ -57,7 +51,7 @@ export const catalogGrpcServerOptionsNestJs = (url: string): GrpcOptions => ({
   transport: Transport.GRPC,
   options: {
     package: CATALOG_GRPC_PACKAGE_NAME,
-    protoPath: join(__dirname, catalogProtoPath),
+    protoPath: join(__dirname, '../proto/catalog.proto'),
     url,
   },
 })
@@ -66,7 +60,7 @@ export const notificationGrpcServerOptionsNestJs = (url: string): GrpcOptions =>
   transport: Transport.GRPC,
   options: {
     package: NOTIFICATION_GRPC_PACKAGE_NAME,
-    protoPath: join(__dirname, notificationProtoPath),
+    protoPath: join(__dirname, '../proto/notification.proto'),
     url,
   },
 })

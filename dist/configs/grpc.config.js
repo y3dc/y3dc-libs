@@ -4,13 +4,12 @@ exports.notificationGrpcServerOptionsNestJs = exports.catalogGrpcServerOptionsNe
 const microservices_1 = require("@nestjs/microservices");
 const path_1 = require("path");
 const constants_1 = require("../constants");
-const path_constant_1 = require("../constants/path.constant");
 exports.ssoGrpcClientOptionsNestJs = {
     name: constants_1.SSO_GRPC_NAME,
     transport: microservices_1.Transport.GRPC,
     options: {
         package: constants_1.SSO_GRPC_PACKAGE_NAME,
-        protoPath: (0, path_1.join)(__dirname, path_constant_1.ssoProtoPath),
+        protoPath: (0, path_1.join)(__dirname, '../proto/sso.proto'),
     },
 };
 exports.catalogGrpcClientOptionsNestJs = {
@@ -18,7 +17,7 @@ exports.catalogGrpcClientOptionsNestJs = {
     transport: microservices_1.Transport.GRPC,
     options: {
         package: constants_1.CATALOG_GRPC_PACKAGE_NAME,
-        protoPath: (0, path_1.join)(__dirname, path_constant_1.catalogProtoPath),
+        protoPath: (0, path_1.join)(__dirname, '../proto/catalog.proto'),
     },
 };
 exports.notificationGrpcClientOptionsNestJs = {
@@ -26,7 +25,7 @@ exports.notificationGrpcClientOptionsNestJs = {
     transport: microservices_1.Transport.GRPC,
     options: {
         package: constants_1.NOTIFICATION_GRPC_PACKAGE_NAME,
-        protoPath: (0, path_1.join)(__dirname, path_constant_1.notificationProtoPath),
+        protoPath: (0, path_1.join)(__dirname, '../proto/notification.proto'),
     },
 };
 exports.orderGrpcClientOptionsNestJs = {
@@ -34,14 +33,14 @@ exports.orderGrpcClientOptionsNestJs = {
     transport: microservices_1.Transport.GRPC,
     options: {
         package: constants_1.ORDER_GRPC_PACKAGE_NAME,
-        protoPath: (0, path_1.join)(__dirname, path_constant_1.orderProtoPath),
+        protoPath: (0, path_1.join)(__dirname, '../proto/order.proto'),
     },
 };
 const catalogGrpcServerOptionsNestJs = (url) => ({
     transport: microservices_1.Transport.GRPC,
     options: {
         package: constants_1.CATALOG_GRPC_PACKAGE_NAME,
-        protoPath: (0, path_1.join)(__dirname, path_constant_1.catalogProtoPath),
+        protoPath: (0, path_1.join)(__dirname, '../proto/catalog.proto'),
         url,
     },
 });
@@ -50,7 +49,7 @@ const notificationGrpcServerOptionsNestJs = (url) => ({
     transport: microservices_1.Transport.GRPC,
     options: {
         package: constants_1.NOTIFICATION_GRPC_PACKAGE_NAME,
-        protoPath: (0, path_1.join)(__dirname, path_constant_1.notificationProtoPath),
+        protoPath: (0, path_1.join)(__dirname, '../proto/notification.proto'),
         url,
     },
 });
