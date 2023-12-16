@@ -7,7 +7,7 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "build": "tsup src/index.ts --format cjs,esm --dts && cp ./src/proto/*.proto ./dist/",
     "lint": "tsc"
   },
   "license": "ISC",
@@ -15,5 +15,9 @@
     "@types/node": "^20.10.4",
     "tsup": "^8.0.1",
     "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@nestjs/microservices": "^10.2.9",
+    "rxjs": "^7.8.1"
   }
 }
