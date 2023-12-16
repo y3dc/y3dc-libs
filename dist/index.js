@@ -1,20 +1,60 @@
 "use strict";
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __exportStar = (this && this.__exportStar) || function(m, exports) {
-    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-__exportStar(require("./configs"), exports);
-__exportStar(require("./constants"), exports);
-__exportStar(require("./enums"), exports);
-__exportStar(require("./proto"), exports);
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+
+// src/index.ts
+var src_exports = {};
+__export(src_exports, {
+  AUTH_PACKAGE_NAME: () => AUTH_PACKAGE_NAME,
+  AUTH_SERVICE_NAME: () => AUTH_SERVICE_NAME,
+  AuthServiceControllerMethods: () => AuthServiceControllerMethods,
+  protobufPackage: () => protobufPackage,
+  test: () => test
+});
+module.exports = __toCommonJS(src_exports);
+
+// src/configs/grpc.config.ts
+var test = "test";
+
+// src/proto/auth.ts
+var import_microservices = require("@nestjs/microservices");
+var protobufPackage = "auth";
+var AUTH_PACKAGE_NAME = "auth";
+function AuthServiceControllerMethods() {
+  return function(constructor) {
+    const grpcMethods = ["authenticate"];
+    for (const method of grpcMethods) {
+      const descriptor = Reflect.getOwnPropertyDescriptor(constructor.prototype, method);
+      (0, import_microservices.GrpcMethod)("AuthService", method)(constructor.prototype[method], method, descriptor);
+    }
+    const grpcStreamMethods = [];
+    for (const method of grpcStreamMethods) {
+      const descriptor = Reflect.getOwnPropertyDescriptor(constructor.prototype, method);
+      (0, import_microservices.GrpcStreamMethod)("AuthService", method)(constructor.prototype[method], method, descriptor);
+    }
+  };
+}
+var AUTH_SERVICE_NAME = "AuthService";
+// Annotate the CommonJS export names for ESM import in node:
+0 && (module.exports = {
+  AUTH_PACKAGE_NAME,
+  AUTH_SERVICE_NAME,
+  AuthServiceControllerMethods,
+  protobufPackage,
+  test
+});
