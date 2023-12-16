@@ -1,5 +1,5 @@
 import { ClientProviderOptions, GrpcOptions, Transport } from '@nestjs/microservices'
-import { join } from 'path'
+const { join } = require('join')
 import {
   CATALOG_GRPC_NAME,
   CATALOG_GRPC_PACKAGE_NAME,
@@ -53,7 +53,7 @@ export const orderGrpcClientOptionsNestJs: ClientProviderOptions = {
   },
 }
 
-export const catalogGrpcServerOptionsNestJs = (url: string): GrpcOptions => ({
+export const catalogGrpcServerOptionsNestJs = (url: string = ''): GrpcOptions => ({
   transport: Transport.GRPC,
   options: {
     package: CATALOG_GRPC_PACKAGE_NAME,
@@ -62,7 +62,7 @@ export const catalogGrpcServerOptionsNestJs = (url: string): GrpcOptions => ({
   },
 })
 
-export const notificationGrpcServerOptionsNestJs = (url: string): GrpcOptions => ({
+export const notificationGrpcServerOptionsNestJs = (url: string = ''): GrpcOptions => ({
   transport: Transport.GRPC,
   options: {
     package: NOTIFICATION_GRPC_PACKAGE_NAME,
