@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package order;
 
-service OrderService {
+service OrderGrpcService {
   rpc Authenticate(Authentication) returns (UserMessage) {}
 }
 

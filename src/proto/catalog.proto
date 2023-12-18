@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package catalog;
 
-service CatalogService {
+service CatalogGrpcService {
   rpc Catalogenticate(Catalog) returns (UserMessage) {}
 }
 
