@@ -4,38 +4,44 @@ exports.notificationGrpcServerOptionsNestJs = exports.catalogGrpcServerOptionsNe
 const microservices_1 = require("@nestjs/microservices");
 const path_1 = require("path");
 const constants_1 = require("../constants");
-exports.ssoGrpcClientOptionsNestJs = {
-    name: constants_1.SSO_GRPC_NAME,
+// ====================== config grpc client nestjs ======================
+const ssoGrpcClientOptionsNestJs = (url) => ({
     transport: microservices_1.Transport.GRPC,
     options: {
         package: constants_1.SSO_GRPC_PACKAGE_NAME,
         protoPath: (0, path_1.join)(__dirname, '../proto/sso.proto'),
+        url,
     },
-};
-exports.catalogGrpcClientOptionsNestJs = {
-    name: constants_1.CATALOG_GRPC_NAME,
+});
+exports.ssoGrpcClientOptionsNestJs = ssoGrpcClientOptionsNestJs;
+const catalogGrpcClientOptionsNestJs = (url) => ({
     transport: microservices_1.Transport.GRPC,
     options: {
         package: constants_1.CATALOG_GRPC_PACKAGE_NAME,
         protoPath: (0, path_1.join)(__dirname, '../proto/catalog.proto'),
+        url,
     },
-};
-exports.notificationGrpcClientOptionsNestJs = {
-    name: constants_1.NOTIFICATION_GRPC_NAME,
+});
+exports.catalogGrpcClientOptionsNestJs = catalogGrpcClientOptionsNestJs;
+const notificationGrpcClientOptionsNestJs = (url) => ({
     transport: microservices_1.Transport.GRPC,
     options: {
         package: constants_1.NOTIFICATION_GRPC_PACKAGE_NAME,
         protoPath: (0, path_1.join)(__dirname, '../proto/notification.proto'),
+        url,
     },
-};
-exports.orderGrpcClientOptionsNestJs = {
-    name: constants_1.ORDER_GRPC_NAME,
+});
+exports.notificationGrpcClientOptionsNestJs = notificationGrpcClientOptionsNestJs;
+const orderGrpcClientOptionsNestJs = (url) => ({
     transport: microservices_1.Transport.GRPC,
     options: {
         package: constants_1.ORDER_GRPC_PACKAGE_NAME,
         protoPath: (0, path_1.join)(__dirname, '../proto/order.proto'),
+        url,
     },
-};
+});
+exports.orderGrpcClientOptionsNestJs = orderGrpcClientOptionsNestJs;
+// ====================== config grpc server nestjs ======================
 const catalogGrpcServerOptionsNestJs = (url) => ({
     transport: microservices_1.Transport.GRPC,
     options: {
