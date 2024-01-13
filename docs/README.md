@@ -250,3 +250,5 @@ json
 
 
 ```
+
+- [ ] how to setup project, run test, migrate db...
